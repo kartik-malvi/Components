@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+ height: auto;
+}
+
+.btn {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  border: 1px solid rgba(151, 71, 255, 1);
+  border-radius: 100px;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+}
+.btn > * {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  
+
+  /* color: #fff; */
+}
+.btnVisible {
+  padding: 1rem 2rem;
+  color: #fff;
+  transition: all 2s ease-in-out; /* Adjust the transition timing */
+}
+/* .bx-chevron-right{
+  font-size: 2rem;
+  font-weight: 500;
+  position: absolute;
+  top: 30%;
+} */
+.btnInVisible {
+ 
+  position: absolute;
+  top: 100%;
+  transition: all 2s ease-in-out; /* Adjust the transition timing */
+
+  left: 0;
+  padding: 1rem 0;
+}
+
+.btn:hover .btnVisible {
+  transform: translateY(-100%);
+}
+.btn:hover .btnInVisible {
+  transform: translateY(-100%);
+  color: rgba(151, 71, 255, 1);
+}
+
+
+/* playBtn */
+.container{
+  position: relative;
+  margin: 200px 0;
+}
+.playBtn{
+background-color: rgba(151, 71, 255, 1);
+color: #fff;
+font-size: 3rem;
+width: 55px;
+height: 55px;
+line-height: 100px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.playBtn i{
+  margin-left: 0.625rem;
+}
+.playBtn:before{
+content: "";
+position: absolute;
+border: 2px solid rgba( 135, 85, 216 ,0.5);
+box-shadow: 0 0 4px 2px  rgba( 135, 85, 216 ,0.5);
+border-radius: 50%;
+left: -15%;
+right: -15%;
+top: -15%;
+bottom: -15%;
+animation: animate 6s linear infinite;
+opacity: 0.8;
+}
+.playBtn:after{
+  content: "";
+  position: absolute;
+  border: 3px solid rgba( 135, 85, 216 ,0.5);
+  box-shadow: 0 0 10px 5px  rgba( 135, 85, 216 ,0.5);
+
+  border-radius: 50%;
+  left: -40%;
+  right: -40%;
+  top: -40%;
+  bottom: -40%;
+  animation: animate 6s linear infinite;
+  opacity: 0.8;
+}
+.playBtn:hover{
+  width: 60px;
+  height: 60px;
+}
+.playBtn:hover::before{
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+}
+.playBtn:hover::after{
+  left: -10%;
+  right: -10%;
+  top: -10%;
+  bottom: -10%;
+  }
+  .playBtn,
+  .playBtn:hover,
+  .playBtn:before,
+  .playBtn:after,
+  .playBtn:hover::after,
+  .playBtn:hover::before {
+    transition: all 2s ease-in-out; /* Adjust the transition timing */
+  }
+  
+  @keyframes animation {
+    0% {
+      transform: scale(0.5);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.5);
+    }
+  }
+  
